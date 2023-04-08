@@ -24,7 +24,7 @@
                 <input type="text" class="form-control" id="user_id" name="user_id" value="{{$auth->id}}" hidden>
                 </div>
                 <div class="mb-3">
-                <label for="staff_id"  class="form-label">patient name</label>
+                <label for="staff_id"  class="form-label">patient name test</label>
                 <input type="text" class="form-control" id="user_id"  value="{{$auth->name}}"disabled>
                 </div>
                 <div class="mb-3">
