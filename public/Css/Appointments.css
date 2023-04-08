@@ -1,0 +1,94 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), inset 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+}
+.docPlace{
+ font-size: 24px;
+ font-weight: bold;
+ color: #484c4f;
+}
+.ico{
+    font-size: 27px;
+    color: #0061ae;
+}
+.docPlace .doc{
+    color: #0061ae;
+    font-weight: bold;
+}
+.nav-link,.nav-item ul a{
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav-link:hover,.nav-item ul a:hover{
+    color: #0061ae;
+}
+
+.nav-link .dep{
+    color:#0061ae;
+}
+.add-new{
+    border:none;
+    border-radius:10px;
+    padding: 11px;
+      background-color: #0061ae;
+ }
+
+
+ h3{
+    color: #0061ae;
+    font-weight: bold;
+ }
+
+/* .tshifts ,.period,.Appointment{
+    width:650px;
+} */
+/* @media (max-width:540px){
+    .tshifts,.period,.Appointment{
+        width:530px;
+    }
+}
+@media (max-width:414px){
+    .tshifts,.period,.Appointment{
+        width:380px;
+    }
+}
+@media (max-width:375px){
+    .tshifts,.period,.Appointment{
+        width:360px;
+    }
+}
+@media (max-width:280px){
+    .tshifts,.period,.Appointment{
+        width:279px;
+    }
+} */
+  thead{
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), inset 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: rgba(218, 212, 212, 0.082);
+    border-radius: 5px;
+
+  }
+  tbody{
+ border-radius: 2px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), inset 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+  }
+thead tr th{
+    font-weight: 800;
+    font-size: 20px;
+}
+ tbody tr  img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+ td{
+    font-weight:bold;
+
+}

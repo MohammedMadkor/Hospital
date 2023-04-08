@@ -1,0 +1,174 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.navbar{
+   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), inset 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+}
+.docPlace{
+font-size: 24px;
+font-weight: bold;
+color: #484c4f;
+}
+.ico{
+   font-size: 27px;
+   color: #0061ae;
+}
+.docPlace .doc , .patient{
+   color: #0061ae;
+   font-weight: bold;
+}
+.nav-link{
+   color: #000;
+   font-size: 20px;
+   font-weight: bold;
+}
+.nav-link:hover{
+   color: #0061ae;
+}
+
+ .inner{
+width:30px;
+ height: 30px;
+ overflow: hidden;
+ border-radius: 50%;
+ position: relative;
+ cursor: pointer;
+}
+
+
+
+.add-new{
+   border:none;
+   border-radius:10px;
+   padding: 11px;
+    /* width: 200px; */
+     background-color: #0061ae;
+}
+.icon-circle{
+   color: #fff;
+   font-size: 25px;
+}
+.text-add{
+   color: #fff;
+   margin-left: 10px;
+   font-size: 22px;
+   font-weight: bold"
+}
+
+.card{
+
+   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), inset 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+}
+
+.card img{
+ width: 150px;
+ height: 150px;
+  border-radius: 50%;
+margin: auto;
+}
+
+.card-body .btn{
+   font-size: 22px;
+   font-weight: bold;
+   color: #fff;
+   margin:2px;
+
+
+}
+.card-body .up{
+  background-color: #0061ae ;
+}
+.card-body .up:hover{
+ background-color: #084d86;
+
+}
+.card-body .del{
+   background-color: #ce2626;
+}
+.card-body .del:hover{
+ background-color: #a30404;
+}
+
+.card-body .card-title{
+   font-weight: bold;
+   font-size: 26px;
+   color: #000;
+
+}
+.table-data{
+   font-size: 15px;
+   font-weight: bolder;
+}
+
+.square{
+   width: 30px;
+   height: 30px;
+border-radius: 50%;
+margin: auto;
+
+}
+
+.link-update{
+  color:  #0061ae ;
+}
+
+/* form add doctor */
+form{
+   padding: 20px;
+   width: 400px;
+   margin: 20px auto;
+   color: rgba(61, 60, 60, 0.8);
+   font-size: 15px;
+   font-weight: bold;
+   border-radius:8px;
+   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), inset 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+}
+
+
+form h4{
+   text-align: center;
+   margin-bottom: 20px;
+   color: #0061ae;
+   font-weight: bold;
+}
+form .form-control,.rec{
+   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), inset 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+}
+.rec{
+   width: 200px;
+   height: 170px;
+   text-align: center;
+   margin: 5px;
+   width: 100%;
+}
+.rec img{
+   width:250px;
+   height: 90px;
+   margin: 10px;
+   object-fit: fill;
+
+}
+.upload{
+  margin-top: 3px;
+   width: 200px;
+   color: rgba(61, 60, 60, 0.8);
+
+   cursor: pointer;
+}
+.file{
+   display: none;
+}
+
+.btn{
+   margin-top: 20px;
+   width: 100%;
+   background-color: #0061ae;
+}
+.btn span{
+   font-size: 20px;
+   font-weight: bold;
+}

@@ -1,0 +1,14 @@
+@media (max-width:393px){
+    form{
+        width: 340px;
+    }
+   }
+   @media (max-width:347px) {
+    form{
+        width:260px ;
+    }
+   form .rec img{
+        width:200px ;
+    }
+
+   }
