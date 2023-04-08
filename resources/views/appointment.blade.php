@@ -24,14 +24,14 @@
                 <input type="text" class="form-control" id="user_id" name="user_id" value="{{$auth->id}}" hidden>
                 </div>
                 <div class="mb-3">
-                <label for="staff_id"  class="form-label">patient name test</label>
+                <label for="staff_id"  class="form-label">patient name </label>
                 <input type="text" class="form-control" id="user_id"  value="{{$auth->name}}"disabled>
                 </div>
                 <div class="mb-3">
                 <input type="text" class="form-control" id="doctor_id" name="doctor_id" value="{{$doctor->id}}" hidden>
                 </div>
                 <div class="mb-3">
-                <label for="staff_id"  class="form-label"> doctor name</label>
+                <label for="staff_id"  class="form-label"> doctor name test</label>
                 <input type="text" class="form-control" id="doctor_id" value="{{$doctor->name}}"disabled>
                 </div>
                 <div class="mb-3">
