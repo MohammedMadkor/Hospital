@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPrescription;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DepartmentController;
@@ -42,6 +43,8 @@ Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 Route::get('mypatient',[DoctorController::class,'mypatient']);
 Route::get('appointment',[AppointmentController::class,'list']);
 Route::get('adminpatient',[PatientController::class,'list']);
+Route::get('AdminPrescription',[AdminPrescription::class,'list']);
+Route::get('viewprescription/{id}',[AdminPrescription::class,'viewprescription']);
 
 Route::group(['prefix' => 'prescription'],function() {
     Route::get('/',[PrescriptionController::class,'listprescription']);

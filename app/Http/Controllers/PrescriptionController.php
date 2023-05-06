@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PrescriptionRequest;
 use App\Models\medicine;
 use App\Models\prescription;
 use App\Models\User;
@@ -16,6 +17,7 @@ class PrescriptionController extends Controller
     {
         # code...
         $doctor = Auth::user();
+        
         $prescription = prescription::with('Medicine')->where('doctor_id', $doctor->id)->get();
 
         return view('prescription.listPrescription',compact('prescription'));
@@ -27,8 +29,9 @@ class PrescriptionController extends Controller
         $doctor = Auth::user();
         return view('prescription.createPrescription',compact(['patient','doctor']));
     }
-    public function storePrescription(Request $request)
+    public function storePrescription(PrescriptionRequest $request)
     {
+
         $name = $request->name;
         $potion = $request->potion;
         $note = $request->note;
@@ -38,6 +41,7 @@ class PrescriptionController extends Controller
                 'patient_id' => $request->patient_id,
                 'doctor_id' => $request->doctor_id,
                 'diagnosis' => $request->diagnosis,
+                'rays' => $request->rays,
                 'analysis' => $request->analysis,
                 'date' => $request->date,
             ]);
@@ -50,6 +54,7 @@ class PrescriptionController extends Controller
                         'prescription_id' => $prescription->id
 
                     ]);
+
                 }
             }
             DB::commit();
@@ -61,10 +66,5 @@ class PrescriptionController extends Controller
             return false;
 
         }
-
-
-
-
-
     }
 }

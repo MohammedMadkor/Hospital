@@ -10,7 +10,12 @@ use Illuminate\Http\Request;
 class DepartmentController extends Controller
 {
     //
-   
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function list()
     {
         $department = Department::orderByDesc('id')->get();

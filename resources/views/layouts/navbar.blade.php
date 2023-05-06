@@ -27,11 +27,9 @@
             <a class="nav-link "  href="{{url('adminpatient')}}">Patients</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "  href="#">Pharmacy</a>
+            <a class="nav-link "  href="{{url('AdminPrescription')}}">Prescription</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link "  href="#">Lab</a>
-          </li>
+
 
         </ul>
         <div class="add ms-4 ">

@@ -13,8 +13,8 @@
     @foreach ($prescription as $p)
         <div class="card" style="width: 18rem; ">
             <div class="card-body">
-                <h5 class="card-title">{{$p->patient_id}} </h5>
-                <h5 class="card-title">{{$p->doctor_id}}</h5>
+                <h5 class="card-title">{{$p->Userprescription->name}} </h5>
+                <h5 class="card-title">{{$p->Doctorprescription->name}}</h5>
                 <p class="card-text">{{$p->diagnosis}}</p>
                 <table class="table">
                     <thead>
@@ -42,6 +42,7 @@
                     </tbody>
                 </table>
                 <h5 class="card-title">{{$p->analysis}}</h5>
+                <h5 class="card-title">{{$p->rays}}</h5>
 
 
 

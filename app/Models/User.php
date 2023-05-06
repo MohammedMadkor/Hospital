@@ -24,11 +24,22 @@ class User extends Authenticatable
         # code...
         return $this->hasMany(Appointment::class,'id','user_id');
     }
+    public function prescriptionuser()
+    {
+        # code...
+        return $this->hasMany(prescription::class,'id','user_id');
+    }
+    public function prescriptiondoctor()
+    {
+        # code...
+        return $this->hasMany(prescription::class,'id','doctor_id');
+    }
     public function Appointments()
     {
         # code...
         return $this->hasMany(Appointment::class,'id','doctor_id');
     }
+
     public function Shift()
     {
         # code...
@@ -45,6 +56,7 @@ class User extends Authenticatable
         # code...
         return $this->belongsTo(prescription::class,'prescription_id','id');
     }
+
 
     /**
      * The attributes that should be hidden for serialization.

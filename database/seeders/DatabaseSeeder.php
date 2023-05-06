@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             [
                 ShiftSeeder::class,
                 PeriodSeeder::class,
+                AdminSeeder::class,
             ]
         );
     }
