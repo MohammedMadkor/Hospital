@@ -1,51 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="card" style="width: 18rem; ">
-        <div class="card-body">
-            <h5 class="card-title">{{$prescription->Userprescription->name}} </h5>
-            <h5 class="card-title">{{$prescription->Doctorprescription->name}}</h5>
-            <p class="card-text">{{$prescription->diagnosis}}</p>
-            <p class="card-text">{{$doctor->Department->name}} </p>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">name</th>
-                        <th scope="col">potion</th>
-                        <th scope="col">note</th>
-                    </tr>
-                    @foreach ($prescription->Medicine as $medicine)
-                    <tr>
-                        <td>{{$loop->index + 1}}</td>
-                        <td>{{$medicine->name}}</td>
-                        <td>{{$medicine->potion}}</td>
-                        <td>{{$medicine->note}}</td>
 
-                    </tr>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription</title>
+    <link rel="shortcut icon" href="../images/24hours.svg" type="image/x-icon">
+    <link rel="stylesheet" href="{{asset('../css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('../css/media.css')}}">
+</head>
 
-                    @endforeach
-                </thead>
-                <tbody>
+<body>
+    <!-- NavBar -->
 
 
 
+    <h1 class=" text-center fw-bold mt-4 main-color "> Prescription</h1>
 
-                </tbody>
-            </table>
-            <h5 class="card-title">{{$prescription->analysis}}</h5>
-            <h5 class="card-title">{{$prescription->rays}}</h5>
+    <div class="container">
 
-
-
+        <div class=" d-flex">
+            <div class="appoinment w-50 p-3  m-3">
+                <h5 class=" fw-bold main-color">Name : <span class=" text-black fw-light"> {{$prescription->Userprescription->name}}</span></h5>
+                <h5 class=" fw-bold main-color">Date : <span class=" text-black fw-light"> {{$prescription->date}}</span></h5>
+            </div>
+            <div class="appoinment w-75 p-3  m-3 text-center">
+                <h5 class=" fw-bold main-color">Doctor : <span class=" text-black fw-light"> {{$prescription->Doctorprescription->name}}</span></h5>
+                <span class=" text-black fw-light"> {{$doctor->Department->name}}</span>
+            </div>
         </div>
+
+
+        <div>
+            <h3 class=" main-color  mt-4 text-center fw-bold">Diagnosis</h3>
+
+            <div class="appoinment w-100 p-3  m-2">
+                {{$prescription->diagnosis}}
+            </div>
+        </div>
+
+        <h4 class=" fw-bold mt-5 main-color text-center"> Treatmeant</h4>
+
+
+        <table class=" mt-3 table-presc ">
+            <tr class=" main-color">
+                <th class=" text-center">Drug Name</th>
+                <th class=" text-center">Repetation</th>
+                <th class=" text-center">Notes</th>
+            </tr>
+            @foreach ($prescription->Medicine as $medicine)
+            <tr>
+                <td class="main-color">{{$medicine->name}}</td>
+                <td> {{$medicine->potion}} </td>
+                <td> {{$medicine->note}} </td>
+            </tr>
+            @endforeach
+
+
+
+
+
+
+
+
+        </table>
+
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  </body>
+    <div class="container my-5">
+
+        <h4 class=" fw-bold main-color text-center"> X-rays or Analysis</h4>
+
+
+        <div class="appoinment w-100 p-3  m-2">
+            {{$prescription->analysis}}
+        </div>
+        <div class="appoinment w-100 p-3  m-2">
+            {{$prescription->rays}}
+        </div>
+
+    </div>
+
+
+
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+
 </html>
