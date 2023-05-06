@@ -172,3 +172,18 @@ form .form-control,.rec{
    font-size: 20px;
    font-weight: bold;
 }
+.link-Prescription{
+ color:#fff;
+ background-color: #0061ae;
+ border: none;
+ border-radius: 4px;
+}
+.link-Prescription:hover{
+   color: #0061ae;
+   background-color: #fff;
+   border: 1px solid #0061ae;
+}
+h3{
+   color: #0061ae;
+   font-weight: bold;
+}
