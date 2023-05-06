@@ -28,7 +28,7 @@ class StoreUserRequest extends FormRequest
             'phone' => 'required|numeric|unique:users',
             'national_id' => 'required|numeric|unique:users',
             'gender' => 'required',
-            'image' => 'required',
+            'image' => 'required|mimes:png,jpg',
             'age' => 'required',
         ];
     }
@@ -43,6 +43,7 @@ class StoreUserRequest extends FormRequest
             'phone.required' => 'phone is required',
             'gender.required' => 'gender is required',
             'image.required' => 'image is required',
+            "image.mimes" => "image must be png or jpg",
             'age.required' => 'age is required',
         ];
     }

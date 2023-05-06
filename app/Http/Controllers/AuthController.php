@@ -38,8 +38,14 @@ class AuthController extends Controller
             Auth::login($user);
             return redirect('mypatient');
         }
+        elseif ($user->role == 2) {
+            # code...
+            Auth::login($user);
+            return redirect('department');
+        }
         } else {
-            return redirect('login');
+            return redirect()->back()->with('error','user not found');
+
         }
 
 

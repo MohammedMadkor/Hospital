@@ -20,6 +20,12 @@ class Appointment extends Model
         # code...
         return $this->belongsTo(User::class,'doctor_id','id');
     }
+    public function User1()
+    {
+        # code...
+        return $this->belongsTo(User::class,'patient_id','id');
+    }
+
     public function Period()
     {
         # code...

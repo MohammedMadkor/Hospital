@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('doctor_id')->nullable()->constrained('users')->nullOnDelete()->cascadeOnDelete();
             $table->longText('diagnosis');
             $table->longText('analysis')->nullable();
+            $table->longText('rays')->nullable();
             $table->date('date');
             $table->timestamps();
         });

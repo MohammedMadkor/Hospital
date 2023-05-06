@@ -1,0 +1,106 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.navbar{
+   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), inset 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+ 
+}
+.docPlace{
+font-size: 24px;
+font-weight: bold;
+color: #484c4f;  
+}
+.ico{
+   font-size: 27px;
+   color: #0061ae;
+}
+.docPlace .doc , .patient{
+   color: #0061ae;
+   font-weight: bold;
+}
+.add-new{
+    border:none;
+    border-radius:10px;
+    padding: 11px;
+     /* width: 200px; */
+      background-color: #0061ae;
+ }
+
+ 
+.nav-link{
+   color: #000;
+   font-size: 20px;
+   font-weight: bold;
+}
+.nav-link:hover{
+   color: #0061ae;
+}
+
+form{
+    padding: 20px;
+    width: 55%;
+    margin: 20px auto;
+    color: rgba(61, 60, 60, 0.8);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius:8px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), inset 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+ }
+ @media (max-width:400px){
+    form{
+        width: 390px;
+    }
+   }
+ @media (max-width:393px){
+  form{
+      width: 340px;
+  }
+ }
+ @media (max-width:347px) {
+  form{
+      width:260px ;
+  } 
+
+  
+ }
+ 
+ form h4{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0061ae;
+    font-weight: bold;
+ }
+ table p{
+    color: rgba(61, 60, 60, 0.8);
+    font-size: 15px;
+    font-weight: bold;
+ }
+ 
+ 
+
+ 
+ .btn{
+    margin-top: 20px;
+    width: 100%;
+    background-color: #0061ae;
+ }
+ .btn span{
+    font-size: 20px;
+    font-weight: bold;
+ }
+ tr .remove-row{
+    background-color: #fff;
+    color: red;
+    border: none;
+ }
+ thead tr th{
+    text-align: center;
+    color: #2469a1;
+    border: 1px solid#038eff60 ;
+ }
+ input{
+    border: none;
+ }
+ input:focus{
+    border: 1px solid #fff;
+ }
