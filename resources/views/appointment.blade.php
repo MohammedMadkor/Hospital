@@ -16,6 +16,7 @@
 
 <body>
 
+
     <section class="background-form">
 
         <div class="container pt-5">
@@ -26,31 +27,25 @@
                 <div class="card-body">
                     <form method="post" action="{{url('appointment/store')}}" >
                         @csrf
-
-
-                        <div class="mb-3">
-                        <input type="text" class="form-control" id="user_id" name="user_id" value="{{$auth->id}}" hidden>
-                        </div>
-                        <div class="mb-3">
-                        <label for="staff_id"  class="form-label fw-bold main-color">Patient Name</label>
-                        <input type="text" class="form-control" id="user_id"  value="{{$auth->name}}"disabled>
-                        </div>
-                        <div class="mb-3">
-                        <input type="text" class="form-control" id="doctor_id" name="doctor_id" value="{{$doctor->id}}" hidden>
-                        </div>
-                        <div class="mb-3">
-                        <label for="staff_id"  class="form-label fw-bold main-color"> Doctor Name</label>
-                        <input type="text" class="form-control" id="doctor_id" value="{{$doctor->name}}"disabled>
-                        </div>
-                        <div class="mb-3 ">
-                        <label for="datepicker" class="form-label fw-bold main-color">Date</label>
-                        <input type="text" class="form-control click" id="datepicker" name="date">
-                        </div>
-                        <select class="form-select mb-3" id="appointments" aria-label="Default select example" name="period_id">
-
-                        </select>
-
-
+                <div class="mb-3">
+                <input type="text" class="form-control" id="user_id" name="user_id" value="{{$auth->id}}" hidden>
+                </div>
+                <div class="mb-3">
+                <label for="staff_id"  class="form-label">patient name </label>
+                <input type="text" class="form-control" id="user_id"  value="{{$auth->name}}"disabled>
+                </div>
+                <div class="mb-3">
+                <input type="text" class="form-control" id="doctor_id" name="doctor_id" value="{{$doctor->id}}" hidden>
+                </div>
+                <div class="mb-3">
+                <label for="staff_id"  class="form-label"> doctor name test</label>
+                <input type="text" class="form-control" id="doctor_id" value="{{$doctor->name}}"disabled>
+                </div>
+                <div class="mb-3">
+                <label for="datepicker" class="form-label">date</label>
+                <input type="text" class="form-control" id="datepicker" name="date">
+                </div>
+                <select class="form-select mb-3" id="appointments" aria-label="Default select example" name="period_id">
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary mb-3">make appointment</button>
                         </div>
