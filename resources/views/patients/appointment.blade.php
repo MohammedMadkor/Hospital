@@ -21,11 +21,12 @@
 
         <div class="container pt-5">
             <div class="d-flex justify-content-center">
-                <img src="../images/Appoinment.jpg" class="appoin" alt="" />
+                <img src="{{asset('../images/Appoinment.jpg')}}" class="appoin" alt="" />
             </div>
             <div class="Book p-5">
                 <div class="card-body">
-                    <form method="post" action="{{url('appointment/store')}}" >
+                    <form method="post" action="{{url('patientadmin/appointment/store')}}" >
+
                         @csrf
                 <div class="mb-3">
                 <input type="text" class="form-control" id="user_id" name="user_id" value="{{$auth->id}}" hidden>
@@ -46,8 +47,10 @@
                 <input type="text" class="form-control" id="datepicker" name="date">
                 </div>
                 <select class="form-select mb-3" id="appointments" aria-label="Default select example" name="period_id">
+                </select>
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary mb-3">make appointment</button>
+
                         </div>
 
                     </form>

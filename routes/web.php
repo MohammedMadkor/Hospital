@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PatientAdminController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\PeriodController;
 use App\Http\Controllers\PrescriptionController;
@@ -27,10 +28,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/',[HomeController::class,'list']);
-Route::get('doctor/{id}',[HomeController::class,'doctorlist']);
-Route::get('appointment/{id}',[HomeController::class,'createappointment']);
-Route::post('appointment/store',[HomeController::class,'storeappointment']);
-Route::get('periodByDate', [HomeController::class, 'periodByDate'])->name('periodByDate');
+
+
+
 
 
 Route::get('dashboard', [AuthController::class, 'dashboard']);
@@ -45,6 +45,16 @@ Route::get('appointment',[AppointmentController::class,'list']);
 Route::get('adminpatient',[PatientController::class,'list']);
 Route::get('AdminPrescription',[AdminPrescription::class,'list']);
 Route::get('viewprescription/{id}',[AdminPrescription::class,'viewprescription']);
+
+Route::group(['prefix'=>'patientadmin'],function(){
+    Route::get('/',[PatientAdminController::class,'list']);
+    Route::get('doctor/{id}',[PatientAdminController::class,'doctorlist']);
+    Route::get('appointment/{id}',[PatientAdminController::class,'createappointment']);
+    Route::post('appointment/store',[PatientAdminController::class,'storeappointment']);
+    Route::get('periodByDate', [PatientAdminController::class, 'periodByDate'])->name('periodByDate');
+    Route::get('profiledoctor/{id}',[PatientAdminController::class,'profiledoctor']);
+
+});
 
 Route::group(['prefix' => 'prescription'],function() {
     Route::get('/',[PrescriptionController::class,'listprescription']);
