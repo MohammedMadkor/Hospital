@@ -26,7 +26,7 @@ body{
   color: white;
   font-weight: bold;
   letter-spacing: 1px;
-  
+
 }
 .login:hover{
   background-color: white ;
@@ -66,9 +66,9 @@ display: inline-block;
   background-size: cover;
   height: 150vh;
   position: relative;
-  
+
   }
-  
+
   .header-layer{
       width: 100%;
       height: 100%;
@@ -78,7 +78,7 @@ display: inline-block;
       left: 0;
       right: 0;
       bottom: 0;
-    
+
   }
   .desc{
       color: white;
@@ -95,7 +95,7 @@ display: inline-block;
   height: 200px;
   border-radius: 5px;
   position: relative;
-  
+
 }
 .layer2{
   background-color:var(--main-color);
@@ -114,7 +114,7 @@ display: inline-block;
   width: 225px;
   height: 240px;
   border-radius: 10px;
-  
+
 }
 
 .about{
@@ -126,7 +126,7 @@ display: inline-block;
   background-color:  #F3F3F3 ;
   padding-bottom: 30px;
  }
- 
+
  .card{
    background-color: #DCEDFA;
    transition: all 1s;
@@ -212,15 +212,15 @@ border-radius: 5px;
   border: 1px solid var(--main-color) !important;
 }
 .describe-category:hover p {
-color: var(--main-color) !important;  
+color: var(--main-color) !important;
 }
 
 /* section doctors */
 .doctor-description{
   width: 100%;
   height: 100%;
- 
- 
+
+
 }
 .doctor{
   background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -246,7 +246,7 @@ background-color: var(--main-color) !important;
     top: 45px;
     width: 40px;
     height: 40px;
-    border-radius: 50%; 
+    border-radius: 50%;
   }
   .card-doctor{
     width: 18rem;
@@ -291,7 +291,7 @@ background-color: var(--main-color) !important;
   border-radius: 15px;
   position: relative;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .triangle img{
@@ -413,17 +413,17 @@ transform: scale(1.1);
     border-collapse: collapse;
     width: 100%;
   }
-  
+
   .table-presc th, td {
     border: 1px solid rgb(180, 182, 201);
     padding: 8px;
-    
+
   }
-  
+
   .table-presc th {
     background-color: #f2f2f2;
   }
-  
+
  .table-presc tr:hover {
     background-color: #f5f5f5;
   }
@@ -467,7 +467,7 @@ margin-left: 40px;
     object-fit: fill;
     border-radius: 50%;
     background-color: var(--main-color);
- 
+
   }
   .upload {
     margin-top: 3px;
@@ -477,7 +477,7 @@ margin-left: 40px;
     background-color: var(--main-color);
     text-align: center;
     padding: 5px;
-} 
+}
 /* Appoinment Booking */
 .Book{
   background-color: #DCEDFA;
@@ -487,5 +487,5 @@ margin-left: 40px;
 }
 .appoin{
   width: 100%;
-  height: 500px;
+  height: 250px;
 }

@@ -31,7 +31,7 @@ class AuthController extends Controller
         if($user) {
         if ($user->role == 0) {
             Auth::login($user);
-            return redirect('/');
+            return redirect('patientadmin');
         }
         elseif ($user->role == 1) {
             # code...
