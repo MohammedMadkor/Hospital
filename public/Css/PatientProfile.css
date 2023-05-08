@@ -1,0 +1,96 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+/* css of patient profil page */
+.card{
+    margin: 40px auto;
+    width: 520px;
+    border: 2px solid gainsboro;
+}
+.card img{
+    width: 150px;
+    height: 150px; 
+    border-radius: 50%;
+    margin:10px auto;
+   
+   } 
+.card .card-body p{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -15px;
+}
+.card ul a{
+    text-decoration: none;
+}
+.card ul i{
+   color: #000;
+   font-weight: bold;
+}
+.card ul li{
+    font-weight: bold;
+    background-color: rgb(241, 239, 239); 
+}
+.card ul li:hover{
+    background-color: #0061ae;
+}
+.card ul li:hover{
+    color: #fff;
+}
+.card ul i:hover{
+    color: #fff;
+}
+@media (max-width:414px){
+    .card{
+        width: 360px;
+    }
+    .card img{
+        width: 90px;
+        height: 90px;
+    }
+   }
+@media (max-width:360px){
+    .card{
+        width: 290px;
+    }
+    .card img{
+        width: 90px;
+        height: 90px;
+    }
+   }
+   @media (max-width:280px){
+    .card{
+        width: 270px;
+    }
+    .card img{
+        width: 90px;
+        height: 90px;
+    }
+   }
+
+
+/* css of Hostory patient  page */
+
+tbody tr  img{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    margin-right: 2px;
+}
+
+tbody tr td{
+    
+    font-weight: bold;
+}
+
+
+.table-data{
+    font-size: 15px;
+   
+ }
+ 
+/* css of personail details page */
+form{
+    color:#0061ae;
+    font-weight: bold;
+}
+
