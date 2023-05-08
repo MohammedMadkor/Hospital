@@ -1,0 +1,38 @@
+.design-footer{
+    background-color:#0061ae ;
+  }
+
+  .icon-footer{
+    font-size: 35px;
+  }
+  .text-footer{
+   color:  #fff;
+   font-size: 16px;
+  }
+  .mapouter{
+    position:relative;
+    text-align:right;
+    height:100%;
+    width:100%;
+  }
+  .gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:100%;
+    width:100%;
+  }
+
+  .square{
+    background: #EAEAEA 0% 0% no-repeat padding-box;
+    border: 1px solid #EAEAEA;
+    border-radius: 2px;
+    opacity: 1;
+    width: 45px;
+    height: 40px;
+    color: #B7B1B1;
+    margin-left: 10px;
+  }
+  .hours img{
+    width: 40px;
+    height: 40px;
+  }

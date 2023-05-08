@@ -1,0 +1,134 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.container1{
+  padding: 10px;
+  margin-left: 99px;
+  max-width: 15em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container1 img{
+    max-width:150px ;
+    margin: auto;
+    padding: 0.6em;
+    border-radius: 0.9em;
+}
+.container1 .text{
+  line-height: 26px;
+}
+.container1 .text p,p{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+@media (max-width:280px){
+  .container1 .text p,p{
+    font-size: 20px;
+  }
+
+}
+@media (max-width:1024px){
+  .container1{
+    margin-left: 48px;
+  }
+
+}
+
+
+.card{
+    overflow: hidden;
+    max-width: 44em;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+
+}
+.card img{
+   transition: all 1.1s ease;
+    max-width:25% ;
+    margin: auto;
+    padding: 0.5em;
+    border-radius: 0.7em;
+}
+.card:hover img{
+  transform: scale(1.1);
+}
+
+
+.card-body{
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.text-section{
+    max-width: 70%;
+}
+.sec-section{
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content:space-between;
+}
+@media (max-width:500px){
+  .text-section{
+    max-width: 50%;
+}
+.sec-section{
+    max-width: 50%;
+}
+
+}
+@media (max-width:280px){
+  .text-section{
+    max-width: 60%;
+}
+.sec-section{
+    max-width: 40%;
+}
+.card img{
+  max-width: 45%;
+}
+.card{
+  flex-direction: column;
+}
+
+}
+
+.price{
+    color: gray;
+}
+p{
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+}
+.checked {
+  color: orange;
+}
+.doctor{
+    color: #000;
+    font-weight: bold;
+    font-size: 22px;
+}
+.card-title{
+    color: #0061ae;
+    font-weight: bold;
+}
+.btn{
+    width: 100px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0061ae;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+}
+.btn:hover{
+  color:#0061ae ;
+  background-color: #fff;
+  border: 1px solid #0061ae;
+}
