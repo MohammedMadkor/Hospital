@@ -395,6 +395,11 @@ transform: scale(1.1);
     color: #B7B1B1;
     margin-left: 10px;
   }
+  .carsoul{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
 
 
   /* prescrption */

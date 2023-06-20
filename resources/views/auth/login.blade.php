@@ -133,7 +133,7 @@
             <div class=' text-white'>
             <h2 class=' fw-bolder fs-1'>Times of work</h2>
             <div class=' d-flex align-items-center mb-2 hours '>
-              <img src="../images/24hours.svg " alt="">
+              <img src="{{asset('../images/24hours.svg')}} " alt="">
                   <h5 class=' ms-2'>24 hours services</h5>
                   </div>
 

@@ -17,10 +17,12 @@ class HomeController extends Controller
     public function list()
     {
         # code...
-        $dept = Department::get();
-        return view('index',compact('dept'));
+        $depts = Department::orderByDesc('id')->limit(9)->get();
+        $Fdoctors = User::where('role',1)->limit(4)->get();
+        $Ldoctors =  User::where('role',1)->orderByDesc('id')->limit(4)->get();
+        return view('index',compact(['depts','Fdoctors','Ldoctors']));
 
     }
 
-    
+
 }

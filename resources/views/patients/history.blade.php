@@ -4,16 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Department-Patient</title>
+    <title>Patient Appointment</title>
     <link rel="shortcut icon" href="../24hours.svg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-    <link href="{{asset('../Css/Navbar.css')}}" rel="stylesheet">
-    <link href="{{asset('../Css/Footer.css')}}" rel="stylesheet">
-    <link href="{{asset('../Css/PatientProfile.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('../Css/deptpatient.css')}}">
-    <!-- <link rel="stylesheet" href="../Css/FindDoctors.css"> -->
+    <link href="{{ asset('../Css/Navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('../Css/Footer.css') }}" rel="stylesheet">
+    <link href="{{ asset('../Css/PatientProfile.css') }}" rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+
+
 
 
 </head>
@@ -62,8 +68,8 @@
     </nav>
     <div class="main-background">
         <div class="container text-white ">
-
-            <h1 class=" fw-bold p-2">Departments </h1>
+            <h5 class=" pt-2">Home /Patient</h5>
+            <h1 class=" fw-bold pb-2">My Appointment</h1>
         </div>
 
     </div>
@@ -71,66 +77,53 @@
     <section>
         <div class="container-fluid">
             <div class="row">
-                {{-- <div class="col-md-3">
-                    <div class=" p-3 text-center data-patient1 mt-3">
-                        <img src="../IMG-20230321-WA0013.jpg" alt="" class=" rounded-circle img-patient m-auto">
-                        <h4 class=" pt-2 fw-bold">Mohamed Saeed</h4>
-
-                    </div>
-                    <a href="../Html/HistoryPatient.html" class=" text-decoration-none">
-                        <div class="appoinment p-3 text-muted">
-                            <i class="fa fa-history" aria-hidden="true"></i>
-                            <span class=" ps-2 fw-bold">History</span>
-                        </div>
-                    </a>
-                    <a href="../Html/PatientAppointments.html" class=" text-decoration-none">
-                        <div class="appoinment p-3 text-muted">
-                            <i class="fa-solid fa-calendar"></i>
-                            <span class="ps-2 fw-bold">My Appointments</span>
-                        </div>
-                    </a>
-
-                    <a href="../Html/Personail Details.html" class=" text-decoration-none">
-                        <div class="appoinment p-3 text-muted">
-                            <i class="fa-solid fa-circle-user"></i>
-                            <span class=" ps-2 fw-bold">Persoal Details</span>
-                        </div>
-                    </a>
-                    <a href="../Html/department-patient.html" class=" text-decoration-none">
-                        <div class="appoinment p-3 text-muted">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <span class=" ps-2 fw-bold">Departments</span>
-                        </div>
-                    </a>
-                    <a href="#" class=" text-decoration-none">
-                        <div class="appoinment p-3 text-muted">
-                            <i class="fa-solid fa-right-from-bracket"></i>
-                            <span class=" ps-2 fw-bold">Logout</span>
-                        </div>
-                    </a>
-                </div> --}}
+               
                 @include('layouts.dash')
 
 
 
-                <div class="col-md-8 d-flex flex-wrap mt-3 ">
-                    @foreach ($dept as $d)
-                    <div class=" w-50 mb-3 pe-3">
-                        <div class="card p-3 ">
+                <div class="col-md-9">
+                    @foreach ($apps as $app)
+                    <div class=" data-patient  mt-3">
 
-                            <img src="{{ $d->image }}" class="card-img-top rounded-circle" alt="...">
+                        <img src="{{$app->Doctor->image}}" class="img-doctor p-3 rounded-2" alt="">
+                        <div>
+                            <h4 class=" fw-bold d-flex ">{{$app->Doctor->name}}</h4>
+                            <h5 class=" fw-bold">{{$app->Doctor->Department->name}}</h5>
 
-                            <div class="card-body text-center mt-3">
-                                <h5 class="card-title  ">{{ $d->name }}</h5>
-                                <a href="{{url('patientadmin/doctor',$d->id)}}">
-                                    <button class=" btn btn-primary ">Doctors</button>
-                                </a>
+                            <div class=" text-muted">
+                                <div class=" d-flex align-items-center">
+                                    <span class=" ps-1">{{$app->date}}</span>
+                                </div>
+
+                                <div class=" d-flex align-items-center">
+
+                                    <span class=" ps-1">{{$app->Period->period_number}}</span>
+                                </div>
+                                <div class=" d-flex align-items-center">
+
+                                    <span class=" ps-1">100 LE</span><br />
+                                </div>
+
                             </div>
+
                         </div>
+                        <button type="button" class="btn btn-sm d-flex align-items-center Cancel ">
+                            <a class=" text-decoration-none" href="{{url('patientadmin/delete',$app->id)}}">
+                                <div class=" main-color d-flex align-items-center">
+
+                                    <span class=" ps-2 fw-bold">Cancel</span>
+                                </div>
+                            </a>
+
+                        </button>
                     </div>
                     @endforeach
-                </div>
 
+
+
+
+                </div>
 
 
             </div>

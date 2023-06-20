@@ -23,20 +23,6 @@ body{
   font-size: 30px;
 }
 
-@media (max-width:280px){
-  .container1 .text p,p{
-    font-size: 20px;
-  }
-
-}
-@media (max-width:1024px){
-  .container1{
-    margin-left: 48px;
-  }
-
-}
-
-
 .card{
     overflow: hidden;
     max-width: 44em;
@@ -58,7 +44,7 @@ body{
 
 
 .card-body{
-    line-height: 14px;
+    line-height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -73,31 +59,6 @@ body{
     align-items:flex-start;
     justify-content:space-between;
 }
-@media (max-width:500px){
-  .text-section{
-    max-width: 50%;
-}
-.sec-section{
-    max-width: 50%;
-}
-
-}
-@media (max-width:280px){
-  .text-section{
-    max-width: 60%;
-}
-.sec-section{
-    max-width: 40%;
-}
-.card img{
-  max-width: 45%;
-}
-.card{
-  flex-direction: column;
-}
-
-}
-
 .price{
     color: gray;
 }

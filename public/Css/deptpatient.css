@@ -22,52 +22,72 @@ body{
   font-weight: bold;
   font-size: 30px;
 }
-@media (max-width:280px){
-  .container1 .text p,p{
-    font-size: 20px;
-  }
 
+.text-section{
+  max-width: 70%;
+}
+.sec-section{
+  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content:space-between;   
+}
+
+
+.price{
+  color: gray;
+}
+p{
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+}
+.checked {
+color: orange;
+}
+.doctor{
+  color: #000;
+  font-weight: bold;
+  font-size: 22px;
+}
+.card-title{
+  color: #0061ae;
+  font-weight: bold;
+}
+.btn{
+  width: 100px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0061ae;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+}
+.btn:hover{
+color:#0061ae ;
+background-color: #fff;
+border: 1px solid #0061ae;
 }
 @media (max-width:1024px){
   .container1{
     margin-left: 48px;
   }
-
-}
-.card{
-  overflow: hidden;
   
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16), inset 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-}
-.card a{
-
-  margin: 1px auto;
-
-}
-
-.card img{
-transition: all 1.1s ease;
-width: 140px;
-height: 140px;
-border-radius: 50%;
-margin: auto;
-
-}
-.card:hover img{
-  transform: scale(1.1);
-}
-
-.card-body .btn{
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
-  margin:2px;
-
-
-}
-.card-body .card-title{
-  font-weight: bold;
-  font-size: 26px;
-  color: #000;
-
-}
+  }
+@media (max-width:500px){
+  .text-section{
+    max-width: 50%;
+  }
+  .sec-section{
+    max-width: 50%;
+  }
+  
+  }
+  @media (max-width:280px){
+  .text-section{
+    max-width: 60%;
+  }
+  
+  
+  }

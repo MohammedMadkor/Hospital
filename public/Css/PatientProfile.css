@@ -4,7 +4,7 @@ body{
 /* css of patient profil page */
 .card{
     margin: 40px auto;
-    width: 520px;
+    
     border: 2px solid gainsboro;
 }
 .card img{
@@ -39,7 +39,7 @@ body{
 .card ul i:hover{
     color: #fff;
 }
-@media (max-width:414px){
+/* @media (max-width:414px){
     .card{
         width: 360px;
     }
@@ -65,28 +65,84 @@ body{
         width: 90px;
         height: 90px;
     }
-   }
+   } */
 
 
-/* css of Hostory patient  page */
-
-tbody tr  img{
-    width:40px;
-    height:40px;
-    border-radius: 50%;
-    margin-right: 2px;
+/* css of Hostory patient and appointment of patient  page */
+span:hover,i:hover{
+    color: #0061ae;
+  }
+  .main-background{
+    background-color: #0061ae;
+  }
+  .data-patient1,.data-patient{
+    background: gray 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: inset 0px 1px 3px #00000029, 0px 2px 6px #00000029;
+    border-radius: 5px 5px 0px 0px;
+    opacity: 1;
+  }
+    .data-patient{
+     display: flex;
+     align-items:center;
+     justify-content: space-around;
+ 
+  }
+  .appoinment{
+background: gray 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: inset 0px 2px 4px #00000029, 0px 2px 4px #00000029;
+opacity: 1;
 }
 
-tbody tr td{
-    
-    font-weight: bold;
+  .img-patient{
+    width: 150px;
+    height: 150px;
+    transition: all 1.1s ease;
+  }
+
+  .img-doctor{
+    width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  transition: all 1.1s ease;
+}
+h4,.card-title{
+  color: #0061ae;
+}
+.img-doctor:hover, .img-patient:hover{
+  transform: scale(1.1);
 }
 
+.prescrption{
+background-color: #CAD8FF;
+float: right;
+}
+.prescrption:hover{
+    border: 1px solid #0061ae;
+}
+.Cancel{
 
-.table-data{
-    font-size: 15px;
-   
- }
+    background-color: rgb(223, 31, 31);
+  
+}
+.Cancel span{
+    color:#fff;
+    font-size: 17px;
+}
+.Cancel:hover{
+    background-color: rgb(189, 18, 18);
+}
+@media  (max-width:768px){
+    .img-patient{
+        width: 150px;
+        height: 150px;
+    }
+    .img-doctor{
+        width: 100px;
+        height: 100px;
+    }
+}
  
 /* css of personail details page */
 form{

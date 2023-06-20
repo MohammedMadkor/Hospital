@@ -6,6 +6,7 @@ use App\Http\Requests\PrescriptionRequest;
 use App\Models\medicine;
 use App\Models\prescription;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,7 @@ class PrescriptionController extends Controller
     {
         # code...
         $doctor = Auth::user();
-        
+
         $prescription = prescription::with('Medicine')->where('doctor_id', $doctor->id)->get();
 
         return view('prescription.listPrescription',compact('prescription'));
@@ -35,6 +36,7 @@ class PrescriptionController extends Controller
         $name = $request->name;
         $potion = $request->potion;
         $note = $request->note;
+        $today = Carbon::now()->format('Y-m-d');
         try {
             DB::beginTransaction();
             $prescription = prescription::create([
@@ -43,7 +45,7 @@ class PrescriptionController extends Controller
                 'diagnosis' => $request->diagnosis,
                 'rays' => $request->rays,
                 'analysis' => $request->analysis,
-                'date' => $request->date,
+                'date' => $today,
             ]);
             if($prescription) {
                 for ($i=0; $i < count($name); $i++) {
@@ -58,7 +60,7 @@ class PrescriptionController extends Controller
                 }
             }
             DB::commit();
-            return redirect('mypatient');
+            return redirect(url('DoctorAdmin/appointment'));
 
         } catch (\Throwable $th) {
             DB::rollback();

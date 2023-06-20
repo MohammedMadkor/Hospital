@@ -102,18 +102,7 @@
                 value="{{ $patient->name }}">
 
         </div>
-        <div class="mb-3">
-            <label for="text1" class="form-label">Date</label>
-            <input type="date" class="form-control" id="text1" aria-describedby="emailHelp" name="date">
-            @error('date')
-            <span class="text-danger err-msg-date" role="alert">
-                <strong>
-                    {{ $message }}
-                </strong>
-            </span>
-        @enderror
-
-        </div>
+        
 
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Diagnosis</label>

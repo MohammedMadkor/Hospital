@@ -4,22 +4,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Department-Patient</title>
+    <title>Personail Details</title>
     <link rel="shortcut icon" href="../24hours.svg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-    <link href="{{asset('../Css/Navbar.css')}}" rel="stylesheet">
-    <link href="{{asset('../Css/Footer.css')}}" rel="stylesheet">
-    <link href="{{asset('../Css/PatientProfile.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('../Css/deptpatient.css')}}">
-    <!-- <link rel="stylesheet" href="../Css/FindDoctors.css"> -->
+    <link href="{{ asset('../Css/Navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('../Css/Footer.css') }}" rel="stylesheet">
+    <link href="{{ asset('../Css/PatientProfile.css') }}" rel="stylesheet">
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+
 
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg ">
+    {{-- <nav class="navbar navbar-expand-lg ">
         <div class="container ">
             <i class="fa-sharp fa-solid fa-stethoscope ico"></i><span class="docPlace"><span
                     class="doc">Doc</span>Place</span>
@@ -59,11 +67,11 @@
 
         </div>
 
-    </nav>
+    </nav> --}}
     <div class="main-background">
         <div class="container text-white ">
-
-            <h1 class=" fw-bold p-2">Departments </h1>
+            <h5 class=" pt-2">Home /Patient</h5>
+            <h1 class=" fw-bold pb-2">Personail Details</h1>
         </div>
 
     </div>
@@ -71,75 +79,86 @@
     <section>
         <div class="container-fluid">
             <div class="row">
-                {{-- <div class="col-md-3">
-                    <div class=" p-3 text-center data-patient1 mt-3">
-                        <img src="../IMG-20230321-WA0013.jpg" alt="" class=" rounded-circle img-patient m-auto">
-                        <h4 class=" pt-2 fw-bold">Mohamed Saeed</h4>
+               @include('layouts.dash')
+
+
+
+                <div class="col-md-9">
+
+
+                    <div class="card data-patient1  mt-3">
+
+                        <img src="{{ $user->image }}" class="card-img-top" alt="Patient-Image">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold text-center">{{ $user->name }}</h4>
+
+
+
+                            <form>
+
+
+                                <div class="mb-3">
+                                    <label for="text1" class="form-label">Phone Number</label>
+                                    <input type="text" class="form-control" id="text1"
+                                        aria-describedby="emailHelp" value="{{ $user->phone }}" readonly>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="text1" class="form-label">National ID</label>
+                                    <input type="text" class="form-control" id="text1"
+                                        aria-describedby="emailHelp" value="{{ $user->national_id }}" readonly>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="text1" class="form-label">Blood Type</label>
+                                    <input type="text" class="form-control" id="text1"
+                                        aria-describedby="emailHelp"
+                                        value="
+@if ($user->blood_type == 1)
+{{ 'A' }}
+@elseif ($user->blood_type == 2)
+{{ 'B' }}
+@elseif ($user->blood_type == 3)
+{{ 'AB' }}
+@elseif ($user->blood_type == 4)
+{{ 'O' }} @endif" readonly>
+
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="text1" class="form-label">Gender</label>
+                                    <input type="text" class="form-control" id="text1"
+                                        aria-describedby="emailHelp" value="{{ $user->gender == 1 ? 'mele' : 'female'}}" readonly>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="text1" class="form-label">Age</label>
+                                    <input type="text" class="form-control" id="text1"
+                                        aria-describedby="emailHelp" value="{{$user->age}}" readonly>
+
+                                </div>
+
+                            </form>
+
+                        </div>
 
                     </div>
-                    <a href="../Html/HistoryPatient.html" class=" text-decoration-none">
-                        <div class="appoinment p-3 text-muted">
-                            <i class="fa fa-history" aria-hidden="true"></i>
-                            <span class=" ps-2 fw-bold">History</span>
-                        </div>
-                    </a>
-                    <a href="../Html/PatientAppointments.html" class=" text-decoration-none">
-                        <div class="appoinment p-3 text-muted">
-                            <i class="fa-solid fa-calendar"></i>
-                            <span class="ps-2 fw-bold">My Appointments</span>
-                        </div>
-                    </a>
-
-                    <a href="../Html/Personail Details.html" class=" text-decoration-none">
-                        <div class="appoinment p-3 text-muted">
-                            <i class="fa-solid fa-circle-user"></i>
-                            <span class=" ps-2 fw-bold">Persoal Details</span>
-                        </div>
-                    </a>
-                    <a href="../Html/department-patient.html" class=" text-decoration-none">
-                        <div class="appoinment p-3 text-muted">
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <span class=" ps-2 fw-bold">Departments</span>
-                        </div>
-                    </a>
-                    <a href="#" class=" text-decoration-none">
-                        <div class="appoinment p-3 text-muted">
-                            <i class="fa-solid fa-right-from-bracket"></i>
-                            <span class=" ps-2 fw-bold">Logout</span>
-                        </div>
-                    </a>
-                </div> --}}
-                @include('layouts.dash')
 
 
-
-                <div class="col-md-8 d-flex flex-wrap mt-3 ">
-                    @foreach ($dept as $d)
-                    <div class=" w-50 mb-3 pe-3">
-                        <div class="card p-3 ">
-
-                            <img src="{{ $d->image }}" class="card-img-top rounded-circle" alt="...">
-
-                            <div class="card-body text-center mt-3">
-                                <h5 class="card-title  ">{{ $d->name }}</h5>
-                                <a href="{{url('patientadmin/doctor',$d->id)}}">
-                                    <button class=" btn btn-primary ">Doctors</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
                 </div>
+
 
 
 
             </div>
 
+
+        </div>
+
         </div>
         </div>
 
     </section>
-
 
     <footer class="design-footer mt-1 pt-5 pb-3  mt-5 ">
         <div class="container">
@@ -193,7 +212,7 @@
                     <div class=' text-white'>
                         <h2 class=' fw-bolder fs-1'>Times of work</h2>
                         <div class=' d-flex align-items-center mb-2 hours '>
-                            <img class="img-foot" src="{{ asset('../images/24hours.svg') }} " alt="">
+                            <img class="img-foot" src="{{ asset('../images/24hours.svg') }}" alt="">
                             <h5 class=' ms-2'>24 hours services</h5>
                         </div>
 
@@ -212,7 +231,6 @@
 
         </div>
     </footer>
-
 
 </body>
 
