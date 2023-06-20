@@ -6,9 +6,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LabController;
 use App\Http\Controllers\PatientAdminController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\PeriodController;
+use App\Http\Controllers\PharmacyController;
 use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\StaffController;
@@ -39,8 +41,9 @@ Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login
 Route::get('registration', [AuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [AuthController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
+Route::get('profile',[AuthController::class,'profile'])->name('profile');
 
-Route::get('mypatient',[DoctorController::class,'mypatient']);
+// Route::get('mypatient',[DoctorController::class,'mypatient']);
 Route::get('appointment',[AppointmentController::class,'list']);
 Route::get('adminpatient',[PatientController::class,'list']);
 Route::get('AdminPrescription',[AdminPrescription::class,'list']);
@@ -53,6 +56,27 @@ Route::group(['prefix'=>'patientadmin'],function(){
     Route::post('appointment/store',[PatientAdminController::class,'storeappointment']);
     Route::get('periodByDate', [PatientAdminController::class, 'periodByDate'])->name('periodByDate');
     Route::get('profiledoctor/{id}',[PatientAdminController::class,'profiledoctor']);
+   Route::get('profile',[PatientAdminController::class,'profile']);
+   Route::get('details',[PatientAdminController::class,'details']);
+   Route::get('history',[PatientAdminController::class,'history']);
+   Route::get('delete/{id}',[PatientAdminController::class,'delete']);
+   Route::get('prescriptions',[PatientAdminController::class,'prescriptions']);
+   Route::get('myprescription/{id}',[PatientAdminController::class,'myprescription']);
+});
+Route::group(['prefix'=> 'pharmacy'],function(){
+    Route::get('/',[PharmacyController::class,'index']);
+    Route::get('medcine/{id}',[PharmacyController::class,'medcine']);
+});
+Route::group(['prefix'=> 'lab'],function(){
+    Route::get('/',[LabController::class,'index']);
+    Route::get('analysis/{id}',[LabController::class,'analysis']);
+});
+
+Route::group(['prefix' => 'DoctorAdmin'],function() {
+     Route::get('appointment',[DoctorController::class,'appointment']);
+     Route::get('mypatient',[DoctorController::class,'mypatient']);
+     Route::get('details',[DoctorController::class,'details']);
+     Route::post('edit/{id}',[DoctorController::class,'edit']);
 
 });
 

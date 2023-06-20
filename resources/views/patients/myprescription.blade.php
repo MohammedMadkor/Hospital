@@ -24,12 +24,12 @@
 
         <div class=" d-flex">
             <div class="appoinment w-50 p-3  m-3">
-                <h5 class=" fw-bold main-color">Name : <span class=" text-black fw-light"> {{$prescription->Userprescription->name}}</span></h5>
-                <h5 class=" fw-bold main-color">Date : <span class=" text-black fw-light"> {{$prescription->date}}</span></h5>
+
+                <h5 class=" fw-bold main-color">Date : <span class=" text-black fw-light"> {{$prescription->date}} </span></h5>
             </div>
             <div class="appoinment w-75 p-3  m-3 text-center">
-                <h5 class=" fw-bold main-color">Doctor : <span class=" text-black fw-light"> {{$prescription->Doctorprescription->name}}</span></h5>
-                <span class=" text-black fw-light"> {{$doctor->Department->name}}</span>
+                <h5 class=" fw-bold main-color">Doctor : <span class=" text-black fw-light"> {{$prescription->Doctorprescription->name}} </span></h5>
+                <span class=" text-black fw-light"> {{$prescription->Doctorprescription->Department->name}} </span>
             </div>
         </div>
 
@@ -39,6 +39,7 @@
 
             <div class="appoinment w-100 p-3  m-2">
                 {{$prescription->diagnosis}}
+
             </div>
         </div>
 

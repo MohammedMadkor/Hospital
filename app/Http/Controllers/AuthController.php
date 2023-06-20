@@ -36,12 +36,22 @@ class AuthController extends Controller
         elseif ($user->role == 1) {
             # code...
             Auth::login($user);
-            return redirect('mypatient');
+            return redirect(url('DoctorAdmin/appointment'));
         }
         elseif ($user->role == 2) {
             # code...
             Auth::login($user);
             return redirect('department');
+        }
+        elseif ($user->role == 3) {
+            # code...
+            Auth::login($user);
+            return redirect('pharmacy');
+        }
+        elseif ($user->role == 4) {
+            # code...
+            Auth::login($user);
+            return redirect('lab');
         }
         } else {
             return redirect()->back()->with('error','user not found');
@@ -51,18 +61,7 @@ class AuthController extends Controller
 
 
 
-        // if ($user->role == 0) {
-        //     Auth::login($user);
-        //     return redirect('/');
-        // }
-        // elseif ($user->role == 1) {
-        //     # code...
-        //     Auth::login($user);
-        //     return redirect('mypatient');
-        // }
-        // elseif ($user == 'null')  {
-        //     return redirect('login');
-        // }
+
     }
     public function view()
     {
@@ -110,12 +109,32 @@ class AuthController extends Controller
 
         return redirect("login")->withSuccess('You are not allowed to access');
     }
+    public function profile()
+    {
+        # code...
+        // dd(Auth::user()->role);
+        if (Auth::user()->role == 2) {
+          return redirect('department');
+        } else if (Auth::user()->role == 1) {
+            return redirect('DoctorAdmin/appointment');
+        }
+         else if (Auth::user()->role == 3) {
+            return redirect('pharmacy');
+        }
+         else if (Auth::user()->role == 4) {
+            return redirect('lab');
+        }
+         else {
+            return redirect('patientadmin');
+        }
+
+    }
 
     public function signOut()
     {
         Session::flush();
         Auth::logout();
 
-        return Redirect('login');
+        return Redirect('/');
     }
 }

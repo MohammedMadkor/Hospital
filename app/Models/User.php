@@ -56,6 +56,7 @@ class User extends Authenticatable
         # code...
         return $this->belongsTo(prescription::class,'prescription_id','id');
     }
+    
 
 
     /**

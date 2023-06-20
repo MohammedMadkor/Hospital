@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PrescriptionRequest extends FormRequest
+class EditDoctorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,19 +24,21 @@ class PrescriptionRequest extends FormRequest
     public function rules()
     {
         return [
-            "patient_id" => 'required',
-            "doctor_id" => 'required',
-            "diagnosis" => 'required',
-
-
+            'name' => 'required',
+            'phone' => 'required',
+            'age' => 'required',
+            'address' => 'required',
+            'image' => 'mimes:png,jpg',
         ];
     }
     public function messages()
     {
         return [
-            'diagnosis.required' => 'diagnosis is required',
-
-           
+            'name.required' => 'name must be  required',
+            'phone.required' => 'phone must be  required',
+            'age.required' => 'age must be  required',
+            'address.required' => 'address must be  required',
+            'image.mimes' => 'image must be png,jpg',
         ];
     }
 }
